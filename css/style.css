@@ -313,6 +313,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         width: 0%;
         -webkit-transition: 0.5s width;
         transition: 0.5s width;
+        
     }
     .main-nav>li>a:hover:after, .main-nav>li.active>a:after {
         width: 100%;
@@ -359,7 +360,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     .dropdown li a {
         display: block;
         color: #FFF;
-        border-top: 1px solid rgba(250, 250, 250, 0.1);
+        border-top: 2px solid greenyellow;
         padding: 10px 0px;
     }
     .dropdown li:nth-child(1) a {
@@ -371,6 +372,8 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
         -webkit-transform: translateY(0px) translateX(50%);
         -ms-transform: translateY(0px) translateX(50%);
         transform: translateY(0px) translateX(50%);
+        
+
     }
     .has-dropdown:hover>a:before {
         -webkit-transform: rotate(0deg);
@@ -578,13 +581,133 @@ header {
 .breadcrumb>li+li:before {
     color: #868F9B;
 }
+/*------------------------------------*\
+	Checkbox
+\*------------------------------------*/
+#ul{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+
+#ul #li{
+    position: relative;
+    list-style-type: none;
+    width: 300px;
+    text-align: center; 
+}
+
+#ul #li label{
+    position: relative;
+
+}
+
+#ul #li label i,
+#ul #li label input[type="checkbox"]
+{
+display: block;
+text-align: center
+}
+
+#ul #li label i{
+    font-size: 50px;
+    color: #222;
+    transition: 0.5;
+}
+
+#ul #li label input[type="checkbox"]
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#ul #li label .check{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(#000,#333);
+    border-radius: 50%;
+    margin: 10px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#ul #li label .check:before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #1b1b1b;
+    transition: 0.5s;
+    z-index: 50;
+
+}
+
+#ul #li label .check:after{
+    content: '';
+    position: absolute;
+    top:  6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: #222;
+    border-radius: 50%;
+    z-index: 2;
+    border: 2px solid greenyellow;
+}
+
+#ul #li label input[type="checkbox"]:checked ~ .check:before
+{
+background: greenyellow;
+box-shadow: 0 0 50px greenyellow,
+0 0 50px greenyellow,
+0 0 50px greenyellow,
+0 0 50px greenyellow,
+0 0 50px greenyellow;
+}
+
+#ul #li label input[type="checkbox"]:checked ~ i.fa
+{
+    color: greenyellow;
+
+}
+
+#optText{
+    text-shadow: 0 0 80px greenyellow;
+}
+
+#options{
+    background-color: black;
+    text-align: center;
+    color: greenyellow;
+    height: 600px;
+}
+
+#hr {
+    display: block;
+    height: 3px;
+    border: 0;
+    border-top: 3px solid greenyellow;
+    background-origin: shadow 3px greenyellow;
+    margin: 1em 0;
+    padding: 0; 
+}
+
 
 
 /*------------------------------------*\
 	About
 \*------------------------------------*/
 
+
 .about {
+    
     position: relative;
     text-align: center;
     padding: 40px 20px;
@@ -600,20 +723,25 @@ header {
 
 .about:after {
     content: "";
-    background-color: #1C1D21;
+    background-color:black;
     position: absolute;
     left: 0;
+    right: 0;
     top: 0;
-    bottom: 0;
-    width: 0%;
+    height: 0%;
     z-index: -1;
-    -webkit-transition: 3s width;
-    transition: 3s width;
+    -webkit-transition: 3s height;
+    transition: 3s height;
 }
 
+
+
 .about:hover:after {
-    width: 100%;
+    height: 100%;
+    background-color: black;
 }
+
+
 
 .about h3 {
     -webkit-transition: 0.2s color;
