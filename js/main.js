@@ -43,7 +43,7 @@
 	});
 
 	
-	// On Scroll nav
+	// On Scroll nav change
 	$(window).on('scroll', function() {
 		var wScroll = $(this).scrollTop();
 
